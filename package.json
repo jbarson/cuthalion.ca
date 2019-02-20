@@ -1,7 +1,7 @@
 {
   "name": "Cuthalion.ca",
   "version": "1.0.0",
-  "description": "Portfolio site for Jon",
+  "description": "Portfolio site",
   "author": "Jon Barson",
   "private": true,
   "scripts": {
@@ -15,9 +15,10 @@
   },
   "dependencies": {
     "cross-env": "^5.2.0",
-    "nuxt": "^2.3.4",
+    "nuxt": "^2.4.0",
     "express": "^4.16.4",
-    "nuxt-buefy": "^0.3.2",
+    "vuetify": "^1.5.0",
+    "vuetify-loader": "^1.2.0",
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/pwa": "^2.6.0"
   },
@@ -37,6 +38,8 @@
     "eslint-config-prettier": "^3.1.0",
     "eslint-plugin-prettier": "2.6.2",
     "prettier": "1.14.3",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2",
     "@vue/test-utils": "^1.0.0-beta.27",
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "^23.6.0",
