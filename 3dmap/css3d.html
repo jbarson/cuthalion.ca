@@ -1,0 +1,200 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <title>3D Star Map||Squadron Strike</title>
+    <style>
+      html, body {
+        height: 100%;
+        color:white;
+      }
+      body {
+        background-color: #050505;
+        margin: 0;
+        font-family: Helvetica;
+        overflow: hidden;
+      }
+      .starDiv {
+        text-align: center;
+        margin-top: -15px;
+        text-shadow: 1px 1px 3px #888;
+      }
+      /*.starDiv:before {
+        content: ".";
+        color:white;
+        z-index: -1;
+      }*/
+      .starDiv img {
+        position: relative;
+        text-align: center;
+      }
+      .akritan{
+        color:red;
+        font-size: 120%;
+        font-weight: bold;
+      }
+      .barchuub{
+        color:blue;
+        font-size: 120%;
+        font-weight: bold;
+      }
+      .chumbasku{
+        color:yellow;
+        font-size: 120%;
+        font-weight: bold;
+      }
+      .drask{
+        color:orange;
+        font-size: 120%;
+        font-weight: bold;
+      }
+      .econ{
+        float: right;
+        margin-top:50%;
+      }
+    </style>
+  </head>
+  <body>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.3.min.js"><\/script>')</script>
+    <script src="js/vendor/bootstrap.min.js"></script>
+    <script src="three.min.js"></script>
+    <script src="TrackballControls.js"></script>
+    <script src="CSS3DRenderer.js"></script>
+    <script src="systemsList.js"></script>
+
+    <div id="container"></div>
+    <script>
+      var camera, scene, renderer;
+      var controls;
+      var objects = [];
+      //var colorSpriteMap = {};
+      //var baseSprite = document.createElement( 'img' );
+
+      init();
+      animate();
+
+      function init() {
+
+        camera = new THREE.PerspectiveCamera( 60, window.innerWidth / window.innerHeight, 1, 5000 );
+        camera.position.z = 1800;
+
+        scene = new THREE.Scene();
+        /*function v(x,y,z){ return new THREE.Vector3(x,y,z); }
+        var lineGeo = new THREE.Geometry();
+        lineGeo.vertices.push(
+          v(-100, 0, 0), v(100, 0, 0),
+          v(0, -100, 0), v(0, 100, 0),
+          v(0, 0, -100), v(0, 0, 100)
+          
+        );
+        var lineMat = new THREE.LineBasicMaterial({color: 0x000000});
+        var line = new THREE.Line(lineGeo, lineMat);
+        line.type = THREE.Lines;
+        scene.add(line);*/
+
+        for (var i in systemsArr){
+          var system = systemsArr[i];
+          var systemDiv = document.createElement('div');
+          systemDiv.className = "starDiv";
+          var starPic = document.createElement('img');
+          if (systemsArr[i].greenChance){
+            starPic.src = 'waterworld.png';
+          }else if (systemsArr[i].push ===3){
+            starPic.src = 'push3.png';
+          }else if (systemsArr[i].push ===4){
+            starPic.src = 'push4.png';
+          }else if (systemsArr[i].push ===5){
+            starPic.src = 'push5.png';
+          }else if (systemsArr[i].push ===8){
+            starPic.src = 'push8.png';
+          }else{
+            starPic.src = 'spark1.png';
+          }
+          
+          if (systemsArr[i].brownEcon){
+            for (var j=0;j<systemsArr[i].brownEcon;j++){
+              var econpic = document.createElement('img');
+              econpic.src = 'econ.png';
+              econpic.className = 'econ';
+              systemDiv.appendChild(econpic);
+            }       
+          }
+          systemDiv.appendChild(starPic);
+          var name = document.createElement( 'div' );
+          name.textContent = system.sysName;
+          if (systemsArr[i].sysName ==="Akritan") {
+            name.className = 'akritan';
+          }else if (systemsArr[i].sysName ==="Barchuub"){
+            name.className = 'barchuub';
+          }else if (systemsArr[i].sysName ==="Chumbasku"){
+            name.className = 'chumbasku';
+          }else if(systemsArr[i].sysName ==="Drask"){
+            name.className = 'drask';
+          }
+          systemDiv.appendChild( name );
+          //var sysGyro = new THREE.Gyroscope();
+        
+          var object = new THREE.CSS3DObject(systemDiv);
+          //var object2 = new THREE.CSS3DSprite( starPic );
+          var location = convertToXYZ(system);
+          var Scale =8;
+          object.position.x = location[0]*Scale;
+          object.position.y = location[1]*Scale;
+          object.position.z = location[2]*Scale;
+          //object2.position=object.position.clone();
+          //sysGyro.position = object.position.clone();
+          //object.add(sysGyro);
+          //console.log(object)
+          //scene.add(sysGyro);
+          //console.log(sysGyro);
+          scene.add( object );
+          //scene.add(object2)
+          objects.push(object);
+        }
+
+        renderer = new THREE.CSS3DRenderer();
+        renderer.setSize( window.innerWidth, window.innerHeight );
+        document.getElementById( 'container' ).appendChild( renderer.domElement );
+
+        controls = new THREE.TrackballControls( camera, renderer.domElement );
+        controls.rotateSpeed = 0.1;
+        controls.dynamicDampingFactor = 0.3;
+        controls.maxDistance=5000;
+
+        controls.addEventListener( 'change', render );
+        window.addEventListener( 'resize', onWindowResize, false );
+      }
+      function onWindowResize() {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize( window.innerWidth, window.innerHeight );
+        render();
+      }
+      function animate() {
+        requestAnimationFrame( animate );
+        controls.update();
+        render();
+      }
+      function render() {
+        for (var i in objects) {
+          objects[i].up = camera.up.clone();
+          objects[i].lookAt(camera.position.clone());
+        }
+        renderer.render( scene, camera );
+      }
+      function convertToXYZ(system){
+        //takes a system (obj) and returns the x,y,z coordinates
+        var pair = [parseInt(system.hex.substr(0, 2), 10), parseInt(system.hex.substr(2, 2), 10)];
+        var result = [];
+        result[0] = (pair[0]*9.6225) - 120.28;
+        result[1] = ((pair[0])% 2 === 1) ? (pair[1] * 10)-97.5 : (pair[1] * 10)-92.5;    
+        result[2] = (system.altitude*10)-100; 
+        return result;
+      };
+    </script>
+  </body>
+
+</html>
