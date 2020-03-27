@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "Bitmaker-resume ===============",
   "main": "eslintrc.js",
+  "private": true,
   "dependencies": {
-    "@gridsome/cli": "^0.3.1",
-    "global": "^4.4.0",
-    "jquery": "^3.4.1"
+    "gridsome": "^0.7.0",
+    "sass-loader": "^8.0.2"
   },
   "devDependencies": {
     "eslint": "^6.8.0",
@@ -17,7 +17,9 @@
     "eslint-plugin-standard": "^4.0.1"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "gridsome build",
+    "develop": "gridsome develop",
+    "explore": "gridsome explore"
   },
   "repository": {
     "type": "git",

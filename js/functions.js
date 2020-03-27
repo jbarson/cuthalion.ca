@@ -7,19 +7,14 @@
 import $ from 'jquery'
 
 function scrollToDiv (element, navheight) {
-  var offset = element.offset()
-  var offsetTop = offset.top
-  var totalScroll = offsetTop - navheight
-  $('body').animate(
-    {
-      scrollTop: totalScroll
-    },
-    500
-  )
+  const offset = element.offset()
+  const offsetTop = offset.top
+  const totalScroll = offsetTop - navheight
+  $('body').animate({ scrollTop: totalScroll }, 500)
 }
 $('.slownav').click(function () {
-  var el = $(this).attr('href')
-  var elWrapped = $(el)
+  const el = $(this).attr('href')
+  const elWrapped = $(el)
   scrollToDiv(elWrapped, 40)
   return false
 })
