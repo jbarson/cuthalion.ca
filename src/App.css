@@ -7,11 +7,11 @@
   letter-spacing: 0.04em;
 }
 .side{
-width:300px;
+  min-width:300px;
 }
 .main{
-  overflow: scroll;
-  overflow-x: hidden;
+  width: 100%;
+  overflow: ;
   background-image: url('./components/images/Jon-relaxed.jpg');
   background-size: cover;
 }
