@@ -1,71 +1,72 @@
-/*!
- * CSS for Jon Barson's personal site
- */
- .columned {
-  -webkit-column-count:2;
-  -moz-column-count:2;
-  -ms-column-count:2;
-  -o-column-count:2;
-  column-count:2;
-  -webkit-column-gap:2em;
-  -moz-column-gap:2em;
-  -ms-column-gap:2em;
-  -o-column-gap:2em;
-  column-gap:2em;
+@media (min-width: 768px) {
+  .columned {
+    -moz-column-count: 2;
+         column-count: 2;
+    -moz-column-gap: 2em;
+         column-gap: 2em;
+  }
 }
 body {
   font-family: ubuntu, Helvetica, Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
 }
- h1,h2,h3,h4 {
-  font-family: amaranth,Helvetica, Arial, sans-serif;
- }
- p {
-  text-align: justify
+
+h1, h2, h3, h4 {
+  font-family: amaranth, Helvetica, Arial, sans-serif;
 }
+
+p {
+  text-align: justify;
+}
+
+.section {
+  padding: 0 2rem;
+}
+
 .hero-unit {
-  margin-bottom: 0;
-  background: #6393c1; /* Old browsers */
-  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+CiAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjNjM5M2MxIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2NmZTdmYSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
-  background: -moz-linear-gradient(-45deg,  #6393c1 0%, #cfe7fa 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#6393c1), color-stop(100%,#cfe7fa)); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(-45deg,  #6393c1 0%,#cfe7fa 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(-45deg,  #6393c1 0%,#cfe7fa 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(-45deg,  #6393c1 0%,#cfe7fa 100%); /* IE10+ */
-  background: linear-gradient(135deg,  #6393c1 0%,#cfe7fa 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6393c1', endColorstr='#cfe7fa',GradientType=1 ); /* IE6-8 fallback on horizontal gradient */
-  text-shadow: 1px 1px 3px #111;
-  text-shadow: 2px 2px 3px #eee;
-  }
-.top-img {
-  margin:0 20px;
+  width: 100%;
+  max-width: 100vw;
+  margin: 0;
+  height: 100vh;
+  padding: 0 5%;
+  background-image: url("../img/Jon-relaxed.jpeg");
+  background-repeat: no-repeat;
+  text-shadow: 1px 1px 0 #111;
+  text-shadow: 0 0 2px #eee;
+}
+
+/* .top-img {
+  margin:2rem 20px;
   width: 240px;
   height: 240px;
-}
+} */
 footer {
+  width: 100%;
   height: 40px;
-  background: #6393c1; /* Old browsers */
-  background: -moz-linear-gradient(-45deg,  #6393c1 0%, #cfe7fa 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#6393c1), color-stop(100%,#cfe7fa)); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(-45deg,  #6393c1 0%,#cfe7fa 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(-45deg,  #6393c1 0%,#cfe7fa 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(-45deg,  #6393c1 0%,#cfe7fa 100%); /* IE10+ */
-  background: linear-gradient(135deg,  #6393c1 0%,#cfe7fa 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6393c1', endColorstr='#cfe7fa',GradientType=1 ); /* IE6-8 fallback on horizontal gradient */
-  text-shadow: 1px 1px 3px #111;
-  text-shadow: 2px 2px 3px #eee;
+  background: #6393c1;
+  /* Old browsers */
+  /* FF3.6+ */
+  /* Chrome,Safari4+ */
+  /* Chrome10+,Safari5.1+ */
+  /* Opera 11.10+ */
+  /* IE10+ */
+  background: linear-gradient(135deg, #6393c1 0%, #cfe7fa 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#6393c1", endColorstr="#cfe7fa",GradientType=1 );
+  /* IE6-8 fallback on horizontal gradient */
+  text-shadow: 1px 1px 0 #111;
+  text-shadow: 2px 2px 0 #eee;
   padding-right: 20px;
-  -webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
-  -o-border-radius: 6px;
-  -ms-border-radius: 6px;
   border-radius: 6px;
 }
+
 .centered {
   margin: auto;
 }
-.socialIcon {
-  height:50%;
-  position: relative;
-  top:-1px;
-}
 
+.socialIcon {
+  height: 50%;
+  position: relative;
+  top: -1px;
+}/*# sourceMappingURL=style.css.map */
