@@ -11,7 +11,7 @@
 }
 .main{
   width: 100%;
-  overflow: ;
+  overflow: hidden;
   background-image: url('./components/images/Jon-relaxed.jpg');
   background-size: cover;
 }
