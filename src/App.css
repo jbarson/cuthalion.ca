@@ -2,7 +2,6 @@
   height:710px;
   display:grid;
   grid-template-columns: 1fr 4fr;
-  font-family: 'Quicksand',Arial, sans-serif;
   line-height: 1.3em;
   letter-spacing: 0.04em;
 }
@@ -14,6 +13,12 @@
   overflow: hidden;
   background-image: url('./components/images/Jon-relaxed.jpg');
   background-size: cover;
+  animation: 3s fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0}
+  to {opacity: 1;}
 }
 
 p{
