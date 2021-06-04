@@ -1,32 +1,42 @@
 {
   "name": "cuthalion.ca",
-  "version": "1.0.0",
-  "description": "Bitmaker-resume ===============",
-  "main": "eslintrc.js",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
-    "@gridsome/cli": "^0.3.1",
-    "global": "^4.4.0",
-    "jquery": "^3.5.0"
-  },
-  "devDependencies": {
-    "eslint": "^6.8.0",
-    "eslint-config-standard": "^13.0.1",
-    "eslint-plugin-import": "^2.20.1",
-    "eslint-plugin-node": "^9.2.0",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-standard": "^4.0.1"
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-icons": "^4.2.0",
+    "react-responsive-carousel": "^3.2.18",
+    "react-router-dom": "^5.2.0",
+    "react-router-hash-link": "^2.4.3",
+    "react-scripts": "4.0.3",
+    "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jbarson/cuthalion.ca.git"
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
   },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/jbarson/cuthalion.ca/issues"
-  },
-  "homepage": "https://github.com/jbarson/cuthalion.ca#readme"
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }
