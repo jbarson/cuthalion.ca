@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import './Sidebar.css';
 import { SiLinkedin, SiGithub, SiTwitter, SiGmail, SiInstagram } from 'react-icons/si';
 import logo from '../images/AngusTransShad.png'
