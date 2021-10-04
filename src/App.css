@@ -8,8 +8,18 @@
 }
 .side{
   min-width:300px;
+  z-index: 1;
+}
+.side.right {
+  transform: translate(calc(100vw - 300px));
+  transition: 1s ease-in-out;
+}
+.side.left {
+  transform: translate(0);
+  transition: 1s ease-in-out;
 }
 .main{
+  position: absolute;
   width: 100%;
   height: 100vh;
   overflow: hidden;
@@ -18,6 +28,7 @@
   opacity: 0;
   animation: 3s fadeIn 0.5s forwards;
 }
+
 
 @keyframes fadeIn {
   from {opacity: 0}
@@ -48,6 +59,9 @@ p{
   .main{
     margin-top: -40px;
     overflow-y: hidden;
+  }
+  .side.right{
+    transform: translate(0);
   }
 }
 

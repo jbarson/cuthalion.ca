@@ -2,11 +2,11 @@ import './Sidebar.css';
 import { SiLinkedin, SiGithub, SiTwitter, SiGmail, SiInstagram } from 'react-icons/si';
 import logo from '../images/AngusTransShad.png'
 
-function Sidebar() {
+function Sidebar({handleClick}) {
 
   return (
     <div className="sidebar">
-      <img src={logo} alt='' />
+      <img src={logo} alt='' onClick={handleClick} />
       <h1>Jon Barson</h1>
       <h2>Developer</h2>
       <h2>Educator</h2>
