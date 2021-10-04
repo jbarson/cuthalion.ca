@@ -26,8 +26,9 @@ h1 {
 
 .socials{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   margin-top: 20px;
+  justify-content: center;
 }
 .sidebar-nav-items{
     margin-bottom: 15px;
@@ -35,6 +36,10 @@ h1 {
 .sidebar>img{
   height: 100px;
   margin-top: 40px;
+  transition: all 0.5s;
+} 
+.sidebar>img:hover {
+  opacity: 0.5;
 }
 .socials a {
   text-decoration: none;
