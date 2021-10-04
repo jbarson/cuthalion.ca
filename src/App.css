@@ -13,7 +13,8 @@
   overflow: hidden;
   background-image: url('./components/images/Jon-relaxed.jpg');
   background-size: cover;
-  animation: 3s fadeIn 0.5s;
+  opacity: 0;
+  animation: 3s fadeIn 0.5s forwards;
 }
 
 @keyframes fadeIn {
