@@ -1,6 +1,5 @@
 import './App.css';
-import { useState } from 'react'
-import { BrowserRouter as Router } from 'react-router-dom';
+import React, { useState } from 'react'
 import Sidebar from './components/sidebar/Sidebar';
 import About from './components/about/About';
 
@@ -10,7 +9,6 @@ function App() {
     setSidebarSide(sidebarSide === 'left' ? 'right' : 'left')
   }
   return (
-    <Router>
       <div className="App">
         <div className={`side ${sidebarSide}`} >
           <nav className="navbar side" >
@@ -21,7 +19,6 @@ function App() {
           <About />
         </div>
       </div>
-    </Router>
   );
 }
 
