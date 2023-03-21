@@ -1,6 +1,7 @@
 import React from 'react'
 import './Sidebar.css';
 import { SiLinkedin, SiGithub, SiTwitter, SiGmail, SiInstagram } from 'react-icons/si';
+import { FaStar } from "react-icons/fa"
 import logo from '../images/AngusTransShad.png'
 
 function Sidebar({handleClick}) {
@@ -17,6 +18,7 @@ function Sidebar({handleClick}) {
         <a href="https://github.com/jbarson" rel="noopener noreferrer" target="_blank" ><SiGithub /></a>
         <a href="https://twitter.com/jbarson" rel="noopener noreferrer" target="_blank" ><SiTwitter /></a>
         <a href="https://www.instagram.com/jbarson/" rel="noopener noreferrer" target="_blank" ><SiInstagram /></a>
+        <a href="https://starmap.cuthalion.ca" rel="noopener noreferrer" target="_blank" ><FaStar /></a>
         <a href="mailto:jbarson@gmail.com" rel="noopener noreferrer" target="_blank" ><SiGmail /></a>
       </div>
 
