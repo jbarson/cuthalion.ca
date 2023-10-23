@@ -4,7 +4,7 @@ import { SiLinkedin, SiGithub, SiTwitter, SiGmail, SiInstagram } from 'react-ico
 import { FaStar } from "react-icons/fa"
 import logo from '../images/AngusTransShad.png'
 
-function Sidebar({handleClick}) {
+function Sidebar({ handleClick }) {
 
   return (
     <div className="sidebar">
@@ -14,7 +14,7 @@ function Sidebar({handleClick}) {
       <h2>Educator</h2>
       <h2>Mentor</h2>
       <div className="socials">
-        <a href="https://www.linkedin.com/in/jon-barson-b3a8467/" rel="noopener noreferrer" target="_blank"><SiLinkedin /></a>
+        <a href="https://www.linkedin.com/in/jon-barson/" rel="noopener noreferrer" target="_blank"><SiLinkedin /></a>
         <a href="https://github.com/jbarson" rel="noopener noreferrer" target="_blank" ><SiGithub /></a>
         <a href="https://twitter.com/jbarson" rel="noopener noreferrer" target="_blank" ><SiTwitter /></a>
         <a href="https://www.instagram.com/jbarson/" rel="noopener noreferrer" target="_blank" ><SiInstagram /></a>
